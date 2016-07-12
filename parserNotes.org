@@ -1,0 +1,30 @@
+#+TITLE: Notes on Parsers in Haskell (functional programming)
+#+AUTHOR: Christopher Sykes
+#+BGCOLOR: #444444
+#+PROPERTIES: "background-color: '#22FF22'"
+#+LANGUAGE:  en-US
+#+INFOJS_OPT: view:showall toc:t ltoc:t mouse:underline path:http://orgmode.org/org-info.js
+#+LINK_HOME: http://sykeslab.myftp.org
+#+LINK_UP: http://sykeslab.myftp.org
+#+OPTIONS: H:2 num:nil toc:nil \n:nil @:t :: |:t ^:{} _:{} *:t TeX:t LaTeX:t
+
+#+ _*_ home:"http://sykeslab.myftp.org"
+
+* *Parsers in Functional Programming Languages*
+* Parser are a type of Monadic structure
+
+** a Parser can be defined as:
+*** The most basic definition of a Parser type object
+ - [ ] =type Parser \:: String -> Tree=
+*** Using the Maybe type becuase the parser might not produce or consume
+    all available inputs
+ + [ ] =type Parser \:: String -> Maybe (Tree, String)=
+
+** A Parser might not produce a tree, so we generalize Tree to a:
+*** We use a list to be more convenient, and we can also use all the list
+    fuctions on it too. (instead of using the Maybe data type)
+ + [ ] =type Parser \:: String -> [(Tree, String)]=
+ + [ ] =type Parser \:: String -> [(a, String)]=
+
+** Maybe is defined as:
+ - [ ] data Maybe a \:: Nothing | Just a
